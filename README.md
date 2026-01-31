@@ -2,7 +2,7 @@
   <img src="figures/Cobra.png" alt="CoBRA Logo" width="400"/>
 </p>
 
-# CoBRA: Toward Precise and Consistent Agent Behaviors across Models
+# Toward Precise and Consistent Agent Behaviors across Models
 
 <p align="center">
   <a href="https://arxiv.org/abs/2509.13588"><img src="https://img.shields.io/badge/arXiv-2509.13588-b31b1b.svg" alt="arXiv"></a>
@@ -12,12 +12,12 @@
 
 
 
-> 📄 **Paper**: [arXiv:2509.13588v2](https://arxiv.org/abs/2509.13588) - *Programmable Cognitive Bias in Social Agents*
+> 📄 **Paper**: [arXiv:2509.13588v2](https://arxiv.org/abs/2509.13588) - *CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments*
 
 **📖 Language / 语言**: [简体中文](README_zh-CN.md) | [繁體中文](README_zh-TW.md)
 
 
-**CoBRA**(**Co**gnitive **B**ias **R**egulator for Social **A**gents) harnesses the structured and validated psychology experiments as the calibration toolkit to control and align model behaviors across models.
+**CoBRA**(**Co**gnitive **B**ias **R**egulator for Social **A**gents) harnesses the structured and validated social science experiments as the calibration toolkit to control and align model behaviors across models.
 
 
 ## The Problem and Our Solution
@@ -27,9 +27,9 @@
   <br>
 </p>
 
-Existing social simulation experiments often use implicit natural language descriptions to specify agent behaviors. However, we found that these specifications often resulted in inconsistent and unpredictable agent behaviors. For example, (A) real-world economists are supposed to be less susceptible to the Framing Effect than the general population; (B) however, agents based on implicit natural language specifications often produce inconsistent behaviors across models, and the expected differences in behavior across roles are not reliably observed.
+Existing social simulation experiments often use implicit natural-language descriptions to specify agent behaviors, which can lead to inconsistent and unpredictable outcomes. For example, (A) a social simulation might expect agents playing economist roles to be less susceptible to framing effects than agents playing the general population roles; however, (B) agents based on implicit natural language specifications often produce inconsistent behaviors across models, and the expected differences in behavior across roles (e.g., economists being less prone than laypeople) are not reliably observed. To address these challenges, 
 
-(C) To tackle this challenge, we introduce **CoBRA** which enables researchers to explicitly specify the cognitive biases of LLM-based agents quantitatively, thereby producing precise and consistent behaviors across models. 
+**(C) we introduce CoBRA, a novel toolkit that enables researchers to explicitly and quantitatively control the amount of cognitive biases exhibited in social agents’ observable behaviors.**
 
 ---
 
@@ -126,12 +126,14 @@ CoBRA/
 If you use CoBRA in your research, please cite our paper:
 
 ```bibtex
-@article{liu2025cobra,
-  title={Programmable Cognitive Bias in Social Agents},
-  author={Liu, Xuan and Shang, Haoyang and Jin, Haojian},
-  journal={arXiv preprint arXiv:2509.13588v2},
-  year={2025},
-  url={https://doi.org/10.48550/arXiv.2509.13588}
+@misc{liu2026cobraprogrammingcognitivebias,
+      title={CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments}, 
+      author={Xuan Liu and Haoyang Shang and Haojian Jin},
+      year={2026},
+      eprint={2509.13588},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2509.13588}, 
 }
 ```
 
@@ -146,8 +148,7 @@ MIT License - see [`LICENSE`](LICENSE) for details
 ## Contact
 
 - **Lead Author**: Xuan Liu (xul049@ucsd.edu)
-- **GitHub Issues**: [Report bugs or request features](https://github.com/assassin808/authority/issues)
-- **Paper**: [arXiv:2509.13588](https://arxiv.org/abs/2509.13588)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/AISmithLab/CoBRA/issues)
 
 ---
 
@@ -155,4 +156,4 @@ MIT License - see [`LICENSE`](LICENSE) for details
 
 ---
 
- The finetuning code is in a develop branch, which is not merged to ensure both branches remain stable. Please switch to the `finetuning` branch to access finetuning functionalities.
+ The finetuning code is in a development branch, which is not merged to ensure both branches remain stable. Please switch to the `finetuning` branch to access finetuning functionalities.
