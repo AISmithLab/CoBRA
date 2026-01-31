@@ -156,4 +156,4 @@ MIT License - see [`LICENSE`](LICENSE) for details
 
 ---
 
- The finetuning code is in a development branch, which is not merged to ensure both branches remain stable. Please switch to the `finetuning` branch to access finetuning functionalities.
+ The finetuning code is in a development branch, which has not merged to ensure both branches remain stable. Please switch to the `finetuning` branch to access finetuning functionalities.
