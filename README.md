@@ -12,7 +12,7 @@
 
 
 
-> 📄 **Paper**: [arXiv:2509.13588v2](https://arxiv.org/abs/2509.13588) - *CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments*
+> 📄 **Paper**: [arXiv:2509.13588](https://arxiv.org/abs/2509.13588) - *CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments*
 
 **📖 Language / 语言**: [简体中文](README_zh-CN.md) | [繁體中文](README_zh-TW.md)
 
