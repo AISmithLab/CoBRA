@@ -14,10 +14,20 @@
 
 > 📄 **Paper**: [arXiv:2509.13588](https://arxiv.org/abs/2509.13588) - *CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments*
 
-**📖 Language / 语言**: [简体中文](README_zh-CN.md) | [繁體中文](README_zh-TW.md)
+**📖 Language / 语言**: [简体中文](README_zh-CN.md)
 
+---
+
+> **💡 What is Cognitive Bias?**
+> 
+> Cognitive bias refers to systematic deviations from rational judgment in human cognition and 
+decision-making. For example, *Framing Effect*: "90% survival rate" vs. "10% mortality rate" — logically identical, yet people make different choices based on how information is framed.
+
+---
 
 **CoBRA**(**Co**gnitive **B**ias **R**egulator for Social **A**gents) harnesses the structured and validated social science experiments as the calibration toolkit to control and align model behaviors across models.
+
+At the heart of CoBRA is a novel closed-loop system primitive with two components: (1) Cognitive Bias Index that measures the demonstrated cognitive bias of a social agent, by quantifying the agent's reactions in a set of validated classic social science experiments; (2) Behavioral Regulation Engine that aligns the agent's behavior to exhibit controlled cognitive bias. Through CoBRA, we show how to operationalize validated social science knowledge (i.e., classical experiments) as reusable "gym" environments for AI -- an approach that may generalize to richer social and affective simulations beyond bias alone.
 
 
 ## The Problem and Our Solution
@@ -27,9 +37,9 @@
   <br>
 </p>
 
-Existing social simulation experiments often use implicit natural-language descriptions to specify agent behaviors, which can lead to inconsistent and unpredictable outcomes. For example, (A) a social simulation might expect agents playing economist roles to be less susceptible to framing effects than agents playing the general population roles; however, (B) agents based on implicit natural language specifications often produce inconsistent behaviors across models, and the expected differences in behavior across roles (e.g., economists being less prone than laypeople) are not reliably observed. To address these challenges, 
+Existing social simulation experiments use implicit natural-language descriptions to specify agent behaviors, leading to inconsistent and unpredictable outcomes across models. For instance, a social simulation might expect agents playing economist roles to be less susceptible to framing effects than agents playing the general population roles; however, agents with implicit specifications fail to reliably demonstrate such behavioral differences.
 
-**(C) we introduce CoBRA, a novel toolkit that enables researchers to explicitly and quantitatively control the amount of cognitive biases exhibited in social agents’ observable behaviors.**
+**CoBRA solves this by enabling researchers to explicitly and quantitatively control the amount of cognitive biases exhibited in social agents' observable behaviors.**
 
 ---
 
@@ -38,11 +48,10 @@ Existing social simulation experiments often use implicit natural-language descr
 - **Representation Engineering** (activation space control)  
 - **Fine-tuning** (parameter space control)
 
-Here is an example closed-loop workflow of CoBRA. A social scientist aims to create an agent with a moderate framing effect (e.g., 2.6 on a 0–4 scale). (1) She specifies the desired bias level in CoBRA alongside the natural language agent description. (2) CoBRA measures the agent's framing effect using validated classical social science experiments (e.g., the Asian Disease study). (3) If the measured bias deviates from the specification, the Behavioral Regulation Engine iteratively adjusts the agent—through prompt engineering, activation modifications, or fine-tuning—until the agent reliably demonstrates the target bias.
-
 <p align="center">
   <img src="figures/fig2.png" alt="CoBRA Workflow" width="800"/>
   <br>
+  <em>Example: A researcher specifies a target bias level → CoBRA measures it via classic experiments → iteratively adjusts the agent until it reliably exhibits the desired bias.</em>
 </p>
 
 ### More Visual Overview
@@ -54,13 +63,13 @@ Here is an example closed-loop workflow of CoBRA. A social scientist aims to cre
 <p align="center">
   <img src="figures/fig5.png" alt="Classic Social Experiment Testbed" width="800"/>
   <br>
-  <em>Figure 5: Classic Social Experiment Testbed. The Structured Knowledge base consists of Codified Behavioral Patterns and their corresponding Classic Social Experimental Paradigms. Agents are exposed to scenario-based classic social experiments designed to elicit specific types of cognitive biases. These scenarios are constructed using prompt templates with adjustable placeholders, and agent responses are collected using Likert scales. Based on these responses, a Cognitive Bias Index is computed to quantify agent behavior.</em>
+  <em>Figure 5: Cognitive Bias Index measures agent behavior through validated classic social experiments.</em>
 </p>
 
 <p align="center">
   <img src="figures/fig6.png" alt="Behavioral Regulation Engine" width="800"/>
   <br>
-  <em>Figure 6: Behavioral Regulation Engine. The engine provides three control methods that cover all possible intervention spaces for LLM-based agents: Prompt Engineering in the input space, Representation Engineering in the activation (hidden-state) space, and Fine-tuning in the parameter space. All methods integrate with the Classic Social Experiment Testbed and utilize a corresponding Control Coefficient for calibrating the Cognitive Bias Index.</em>
+  <em>Figure 6: Behavioral Regulation Engine provides three control methods across input, activation, and parameter spaces.</em>
 </p>
 
 </details>
@@ -152,8 +161,4 @@ MIT License - see [`LICENSE`](LICENSE) for details
 
 ---
 
-**Need help?** Check [`examples/unified_bias/README.md`](examples/unified_bias/README.md) for detailed walkthroughs.
-
----
-
- The finetuning code is in a development branch, which has not merged to ensure both branches remain stable. Please switch to the `finetuning` branch to access finetuning functionalities.
+**Need help?** Check [`examples/unified_bias/README.md`](examples/unified_bias/README.md) for detailed walkthroughs. The finetuning code is in the `finetuning` branch.
