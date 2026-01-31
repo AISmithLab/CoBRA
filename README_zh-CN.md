@@ -52,25 +52,6 @@ CoBRA 的核心是一套创新的闭环控制系统，包含两个关键模块�
   <em>示例：研究人员指定目标偏差水平 → CoBRA 通过经典实验测量 → 迭代调整智能体直到其可靠地展现所需偏差。</em>
 </p>
 
-### 更多可视化概览
-
-
-<details>
-<summary><b>点击查看更多技术图表</b></summary>
-
-<p align="center">
-  <img src="figures/fig5.png" alt="Classic Social Experiment Testbed" width="800"/>
-  <br>
-  <em>图5: 认知偏差指数通过经过验证的经典社会实验测量智能体行为。</em>
-</p>
-
-<p align="center">
-  <img src="figures/fig6.png" alt="Behavioral Regulation Engine" width="800"/>
-  <br>
-  <em>图6: 行为调节引擎在输入、激活和参数空间提供三种控制方法。</em>
-</p>
-
-</details>
 
 ## 快速开始（3步）
 

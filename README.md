@@ -54,25 +54,6 @@ Existing social simulation experiments use implicit natural-language description
   <em>Example: A researcher specifies a target bias level → CoBRA measures it via classic experiments → iteratively adjusts the agent until it reliably exhibits the desired bias.</em>
 </p>
 
-### More Visual Overview
-
-
-<details>
-<summary><b>Click to see more technical diagrams</b></summary>
-
-<p align="center">
-  <img src="figures/fig5.png" alt="Classic Social Experiment Testbed" width="800"/>
-  <br>
-  <em>Figure 5: Cognitive Bias Index measures agent behavior through validated classic social experiments.</em>
-</p>
-
-<p align="center">
-  <img src="figures/fig6.png" alt="Behavioral Regulation Engine" width="800"/>
-  <br>
-  <em>Figure 6: Behavioral Regulation Engine provides three control methods across input, activation, and parameter spaces.</em>
-</p>
-
-</details>
 
 ## Quick Start (3 Steps)
 
