@@ -1,8 +1,7 @@
+### 以经验证的社会科学知识为准绳实现跨模型精确一致的智能体行为
 <p align="center">
   <img src="figures/Cobra.png" alt="CoBRA Logo" width="400"/>
 </p>
-
-# CoBRA: 实现跨模型精确一致的智能体行为
 
 <p align="center">
   <a href="https://arxiv.org/abs/2509.13588"><img src="https://img.shields.io/badge/arXiv-2509.13588-b31b1b.svg" alt="arXiv"></a>
