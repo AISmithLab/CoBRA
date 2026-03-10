@@ -2,49 +2,51 @@
   <img src="figures/Cobra.png" alt="CoBRA Logo" width="400"/>
 </p>
 
-## 以经验证的社会科学知识为准绳实现跨模型精确一致的智能体行为
-
 <p align="center">
+  <a href="https://chi2026.acm.org/"><img src="https://img.shields.io/badge/🏆_CHI_2026-Best_Paper_Award-gold.svg" alt="CHI 2026 Best Paper Award"></a>
   <a href="https://arxiv.org/abs/2509.13588"><img src="https://img.shields.io/badge/arXiv-2509.13588-b31b1b.svg" alt="arXiv"></a>
-  <a href="https://doi.org/10.48550/arXiv.2509.13588"><img src="https://img.shields.io/badge/DOI-10.48550/arXiv.2509.13588-blue" alt="DOI"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg" alt="License"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
 </p>
 
-> 📄 **论文**: [arXiv:2509.13588](https://arxiv.org/abs/2509.13588) - *CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments*
+<h3 align="center"><em>以经验证的社会科学知识为准绳，实现跨模型精确一致的智能体行为</em></h3>
 
+<p align="center">📄 <b>论文</b>: <a href="https://arxiv.org/abs/2509.13588">CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments</a></p>
 
-**📖 Language / 语言**: [English](README.md) 
+<p align="center"><strong>如果觉得 CoBRA 有用，请点个 Star ⭐ 帮助更多人发现它！</strong></p>
+
+<p align="center">
+  <a href="README.md"><img src="https://img.shields.io/badge/lang-English-blue.svg" alt="English"></a>
+  <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/lang-简体中文-red.svg" alt="简体中文"></a>
+</p>
 
 ---
 
 > **💡 什么是认知偏差？**
 > 
-> 认知偏差是指人类在认知和决策过程中系统性地偏离理性判断的现象。例如*框架效应*："90% 存活率" vs. "10% 死亡率" —— 逻辑等价，但人们会因表述方式不同而做出不同决策。
+> 人类在认知和决策过程中系统性地偏离理性判断的现象。例如*框架效应*："90% 存活率" vs. "10% 死亡率" —— 逻辑等价，但人们会因表述方式不同而做出不同决策。
 
 ---
 
-**CoBRA**（**Co**gnitive **B**ias **R**egulator for Social **A**gents / 社交智能体认知偏差调节器）通过结构化且经过验证的社会科学实验，实现跨模型的智能体行为控制与对齐。
+可复现性与可控性是科学研究的基本要求。然而，隐式自然语言描述——当前几乎所有 LLM 社交模拟中指定智能体行为的主流方法——往往无法在不同模型间产生一致的行为，也无法捕捉描述中的细微差异。
 
-CoBRA 的核心是一套创新的闭环控制系统，包含两个关键模块：(1) **认知偏差指数** —— 基于经典社会科学实验测量智能体的认知偏差水平；(2) **行为调节引擎** —— 精确调控智能体表现出的认知偏差程度。通过 CoBRA，我们展示了如何将经过验证的社会科学知识（即经典实验）转化为可复用的 AI 训练环境——这一方法不仅适用于认知偏差，还可推广到更丰富的社交与情感模拟场景。
+**CoBRA**（**Co**gnitive **B**ias **R**egulator for Social **A**gents / 社交智能体认知偏差调节器）是一套创新工具包，让研究者能够显式地指定 LLM 智能体的行为细节，并在不同模型间获得一致的行为表现。
 
-
-## 问题与解决方案
+通过 CoBRA，我们展示了如何**将经过验证的社会科学知识转化为可复用的 AI 训练环境**——这一方法可推广到更丰富的社交与情感模拟场景。
 
 <p align="center">
   <img src="figures/fig1.png" alt="CoBRA Overview" width="800"/>
   <br>
+  <em>问题与解决方案：从隐式规范下不一致的智能体行为，到显式、定量的行为控制。</em>
 </p>
-
-现有的社交模拟实验使用隐式的自然语言描述来指定智能体行为，导致跨模型的结果不一致且不可预测。例如，社交模拟可能期望扮演经济学家角色的智能体比扮演普通大众角色的智能体更不容易受到框架效应的影响；然而，基于隐式规范的智能体无法可靠地展现这种行为差异。
-
-**CoBRA 通过使研究人员能够明确且定量地控制社交智能体可观察行为中展现的认知偏差程度来解决这一问题。**
 
 ---
 
-**CoBRA 提供三种控制方法:**
-- **提示工程** (输入空间控制)
-- **表示工程** (激活空间控制)  
-- **微调** (参数空间控制)
+**CoBRA 的核心是一套创新的闭环控制系统，包含两个关键模块：**
+- **认知偏差指数** —— 基于经典社会科学实验，量化测量智能体的认知偏差水平
+- **行为调节引擎** —— 精确调控智能体表现出的认知偏差程度，支持三种控制方法：
+  - **提示工程**（输入空间控制）
+  - **表示工程**（激活空间控制）
+  - **微调**（参数空间控制）
 
 <p align="center">
   <img src="figures/fig2.png" alt="CoBRA Workflow" width="800"/>
@@ -125,9 +127,7 @@ CoBRA/
 }
 ```
 
-**论文链接：**
-- arXiv: [https://arxiv.org/abs/2509.13588](https://arxiv.org/abs/2509.13588)
-- DOI: [https://doi.org/10.48550/arXiv.2509.13588](https://doi.org/10.48550/arXiv.2509.13588)
+**论文链接：** [https://arxiv.org/abs/2509.13588](https://arxiv.org/abs/2509.13588)
 
 ## 许可证
 
@@ -141,3 +141,4 @@ MIT License - 详见 [`LICENSE`](LICENSE) 文件
 ---
 
 **需要帮助？** 查看 [`examples/unified_bias/README.md`](examples/unified_bias/README.md) 获取详细教程。微调代码位于 `finetuning` 分支。
+

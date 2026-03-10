@@ -2,51 +2,51 @@
   <img src="figures/Cobra.png" alt="CoBRA Logo" width="400"/>
 </p>
 
-## Toward Precise and Consistent Agent Behaviors across Models Anchored by Validated Social Science Knowledge
-
 <p align="center">
+  <a href="https://chi2026.acm.org/"><img src="https://img.shields.io/badge/🏆_CHI_2026-Best_Paper_Award-gold.svg" alt="CHI 2026 Best Paper Award"></a>
   <a href="https://arxiv.org/abs/2509.13588"><img src="https://img.shields.io/badge/arXiv-2509.13588-b31b1b.svg" alt="arXiv"></a>
-  <a href="https://doi.org/10.48550/arXiv.2509.13588"><img src="https://img.shields.io/badge/DOI-10.48550/arXiv.2509.13588-blue" alt="DOI"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg" alt="License"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
 </p>
 
+<h3 align="center"><em>Toward Precise and Consistent Agent Behaviors across Models Anchored by Validated Social Science Knowledge</em></h3>
 
+<p align="center">📄 <b>Paper</b>: <a href="https://arxiv.org/abs/2509.13588">CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments</a></p>
 
-> 📄 **Paper**: [arXiv:2509.13588](https://arxiv.org/abs/2509.13588) - *CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments*
+<p align="center"><strong>If you find CoBRA useful, please star ⭐ this repo to help others discover it!</strong></p>
 
-**📖 Language / 语言**: [简体中文](README_zh-CN.md)
+<p align="center">
+  <a href="README.md"><img src="https://img.shields.io/badge/lang-English-blue.svg" alt="English"></a>
+  <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/lang-简体中文-red.svg" alt="简体中文"></a>
+</p>
 
 ---
 
 > **💡 What is Cognitive Bias?**
 > 
-> Cognitive bias refers to systematic deviations from rational judgment in human cognition and 
-decision-making. For example, *Framing Effect*: "90% survival rate" vs. "10% mortality rate" — logically identical, yet people make different choices based on how information is framed.
+> Systematic deviations from rational judgment in human cognition and decision-making. For example, *Framing Effect*: "90% survival rate" vs. "10% mortality rate" — logically identical, yet people make different choices based on how information is framed.
 
 ---
 
-**CoBRA**(**Co**gnitive **B**ias **R**egulator for Social **A**gents) harnesses the structured and validated social science experiments as the calibration toolkit to control and align model behaviors across models.
+Reproducibility and controllability are fundamental to scientific research. Yet implicit natural language descriptions — the dominant approach for specifying social agent behaviors in nearly all LLM-based social simulations — often fail to yield consistent behavior across models or capture the nuances of the descriptions.
 
-At the heart of CoBRA is a novel closed-loop system primitive with two components: (1) Cognitive Bias Index that measures the demonstrated cognitive bias of a social agent, by quantifying the agent's reactions in a set of validated classic social science experiments; (2) Behavioral Regulation Engine that aligns the agent's behavior to exhibit controlled cognitive bias. Through CoBRA, we show how to operationalize validated social science knowledge (i.e., classical experiments) as reusable "gym" environments for AI -- an approach that may generalize to richer social and affective simulations beyond bias alone.
+**CoBRA** (**Co**gnitive **B**ias **R**egulator for Social **A**gents) is a novel toolkit that lets researchers explicitly specify desired nuances in LLM-based agents and obtain consistent behavior across models.
 
-
-## The Problem and Our Solution
+Through CoBRA, we show how to **operationalize validated social science knowledge as reusable "gym" environments for AI** — an approach that generalizes to richer social and affective simulations.
 
 <p align="center">
   <img src="figures/fig1.png" alt="CoBRA Overview" width="800"/>
   <br>
+  <em>The problem and our solution: from inconsistent agent behaviors under implicit specifications to explicit, quantitative control.</em>
 </p>
-
-Existing social simulation experiments use implicit natural-language descriptions to specify agent behaviors, leading to inconsistent and unpredictable outcomes across models. For instance, a social simulation might expect agents playing economist roles to be less susceptible to framing effects than agents playing the general population roles; however, agents with implicit specifications fail to reliably demonstrate such behavioral differences.
-
-**CoBRA solves this by enabling researchers to explicitly and quantitatively control the amount of cognitive biases exhibited in social agents' observable behaviors.**
 
 ---
 
-**CoBRA provides three control methods:**
-- **Prompt Engineering** (input space control)
-- **Representation Engineering** (activation space control)  
-- **Fine-tuning** (parameter space control)
+**At the heart of CoBRA is a novel closed-loop system with two core components:**
+- **Cognitive Bias Index** — measures the cognitive bias of a social agent by quantifying its reactions in validated classic social science experiments
+- **Behavioral Regulation Engine** — aligns the agent's behavior to exhibit controlled cognitive bias, via three control methods:
+  - **Prompt Engineering** (input space control)
+  - **Representation Engineering** (activation space control)
+  - **Fine-tuning** (parameter space control)
 
 <p align="center">
   <img src="figures/fig2.png" alt="CoBRA Workflow" width="800"/>
@@ -85,7 +85,7 @@ CoBRA/
 │   ├── bandwagon/              # Bandwagon Effect utils
 │   ├── confirmation/           # Confirmation Bias utils
 │   └── framing/                # Framing Effect utils
-├── generator/                  # Data generation utilitiesn
+├── generator/                  # Data generation utilities
 ├── data_generated/             # Generated experimental data
 ├── webdemo/                    # Web demonstration interface
 └── requirements.txt            # Python dependencies
@@ -127,9 +127,7 @@ If you use CoBRA in your research, please cite our paper:
 }
 ```
 
-**Paper Links:**
-- arXiv: [https://arxiv.org/abs/2509.13588](https://arxiv.org/abs/2509.13588)
-- DOI: [https://doi.org/10.48550/arXiv.2509.13588](https://doi.org/10.48550/arXiv.2509.13588)
+**Paper Link:** [https://arxiv.org/abs/2509.13588](https://arxiv.org/abs/2509.13588)
 
 ## License
 
@@ -143,3 +141,4 @@ MIT License - see [`LICENSE`](LICENSE) for details
 ---
 
 **Need help?** Check [`examples/unified_bias/README.md`](examples/unified_bias/README.md) for detailed walkthroughs. The finetuning code is in the `finetuning` branch.
+
