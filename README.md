@@ -6,6 +6,7 @@
   <a href="https://chi2026.acm.org/"><img src="https://img.shields.io/badge/🏆_CHI_2026-Best_Paper_Award-gold.svg" alt="CHI 2026 Best Paper Award"></a>
   <a href="https://arxiv.org/abs/2509.13588"><img src="https://img.shields.io/badge/arXiv-2509.13588-b31b1b.svg" alt="arXiv"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
+  <img src="https://img.shields.io/badge/🚧_Status-Under_Active_Development-orange.svg" alt="Under Active Development">
 </p>
 
 <h3 align="center"><em>Toward Precise and Consistent Agent Behaviors across Models Anchored by Validated Social Science Knowledge</em></h3>
@@ -19,7 +20,7 @@
   <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/lang-简体中文-red.svg" alt="简体中文"></a>
 </p>
 
----
+
 
 > **💡 What is Cognitive Bias?**
 > 
@@ -135,8 +136,7 @@ MIT License - see [`LICENSE`](LICENSE) for details
 
 ## Contact
 
-- **Lead Author**: Xuan Liu (xul049@ucsd.edu)
-- **GitHub Issues**: [Report bugs or request features](https://github.com/AISmithLab/CoBRA/issues)
+For questions, please contact the corresponding author Xuan Liu at xul049@ucsd.edu, or file a [GitHub Issue](https://github.com/AISmithLab/CoBRA/issues) to report bugs and request features.
 
 ---
 

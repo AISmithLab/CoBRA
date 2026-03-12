@@ -3,12 +3,13 @@
 </p>
 
 <p align="center">
-  <a href="https://chi2026.acm.org/"><img src="https://img.shields.io/badge/🏆_CHI_2026-Best_Paper_Award-gold.svg" alt="CHI 2026 Best Paper Award"></a>
+  <a href="https://chi2026.acm.org/"><img src="https://img.shields.io/badge/🏆_CHI_2026-Best_Paper_Award-gold.svg" alt="CHI 2026 最佳论文奖"></a>
   <a href="https://arxiv.org/abs/2509.13588"><img src="https://img.shields.io/badge/arXiv-2509.13588-b31b1b.svg" alt="arXiv"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
+  <img src="https://img.shields.io/badge/🚧_Status-Under_Active_Development-orange.svg" alt="活跃开发中">
 </p>
 
-<h3 align="center"><em>以经验证的社会科学知识为准绳，实现跨模型精确一致的智能体行为</em></h3>
+<h3 align="center"><em>以经过验证的社会科学知识为准绳，实现跨模型精确一致的智能体行为</em></h3>
 
 <p align="center">📄 <b>论文</b>: <a href="https://arxiv.org/abs/2509.13588">CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments</a></p>
 
@@ -19,10 +20,10 @@
   <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/lang-简体中文-red.svg" alt="简体中文"></a>
 </p>
 
----
+
 
 > **💡 什么是认知偏差？**
-> 
+>
 > 人类在认知和决策过程中系统性地偏离理性判断的现象。例如*框架效应*："90% 存活率" vs. "10% 死亡率" —— 逻辑等价，但人们会因表述方式不同而做出不同决策。
 
 ---
@@ -31,10 +32,10 @@
 
 **CoBRA**（**Co**gnitive **B**ias **R**egulator for Social **A**gents / 社交智能体认知偏差调节器）是一套创新工具包，让研究者能够显式地指定 LLM 智能体的行为细节，并在不同模型间获得一致的行为表现。
 
-通过 CoBRA，我们展示了如何**将经过验证的社会科学知识转化为可复用的 AI 训练环境**——这一方法可推广到更丰富的社交与情感模拟场景。
+通过 CoBRA，我们展示了如何**将经过验证的社会科学知识转化为可复用的 AI 行为参数化框架**——这一方法可推广到更丰富的社交与情感模拟场景。
 
 <p align="center">
-  <img src="figures/fig1.png" alt="CoBRA Overview" width="800"/>
+  <img src="figures/fig1.png" alt="CoBRA 概览" width="800"/>
   <br>
   <em>问题与解决方案：从隐式规范下不一致的智能体行为，到显式、定量的行为控制。</em>
 </p>
@@ -42,6 +43,7 @@
 ---
 
 **CoBRA 的核心是一套创新的闭环控制系统，包含两个关键模块：**
+
 - **认知偏差指数** —— 基于经典社会科学实验，量化测量智能体的认知偏差水平
 - **行为调节引擎** —— 精确调控智能体表现出的认知偏差程度，支持三种控制方法：
   - **提示工程**（输入空间控制）
@@ -49,7 +51,7 @@
   - **微调**（参数空间控制）
 
 <p align="center">
-  <img src="figures/fig2.png" alt="CoBRA Workflow" width="800"/>
+  <img src="figures/fig2.png" alt="CoBRA 工作流程" width="800"/>
   <br>
   <em>示例：研究人员指定目标偏差水平 → CoBRA 通过经典实验测量 → 迭代调整智能体直到其可靠地展现所需偏差。</em>
 </p>
@@ -104,7 +106,7 @@ CoBRA/
 ## 支持的偏差类型与实验
 
 | 偏差类型 | 实验范式 | 数据目录 | 控制范围 |
-|---------|---------|---------|---------|
+|----------|----------|----------|----------|
 | **权威效应** | 米尔格拉姆服从实验、斯坦福监狱实验 | [`data/authority/`](data/authority/) | 0-4 量表 |
 | **从众效应** | 阿希线段实验、酒店毛巾实验 | [`data/bandwagon/`](data/bandwagon/) | 0-4 量表 |
 | **确认偏差** | 沃森选择任务、偏向信息实验 | [`data/confirmation/`](data/confirmation/) | 0-4 量表 |
@@ -135,10 +137,8 @@ MIT License - 详见 [`LICENSE`](LICENSE) 文件
 
 ## 联系方式
 
-- **主要作者**: Xuan Liu (xul049@ucsd.edu)
-- **GitHub Issues**: [报告 Bug 或请求新功能](https://github.com/AISmithLab/CoBRA/issues)
+如有问题，请联系通讯作者 Xuan Liu (xul049@ucsd.edu)，或通过 [GitHub Issues](https://github.com/AISmithLab/CoBRA/issues) 报告 Bug 和请求新功能。
 
 ---
 
 **需要帮助？** 查看 [`examples/unified_bias/README.md`](examples/unified_bias/README.md) 获取详细教程。微调代码位于 `finetuning` 分支。
-
