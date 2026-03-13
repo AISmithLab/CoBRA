@@ -11,7 +11,10 @@
 
 <h3 align="center"><em>Toward Precise and Consistent Agent Behaviors across Models Anchored by Validated Social Science Knowledge</em></h3>
 
-<p align="center">📄 <b>Paper</b>: <a href="https://arxiv.org/abs/2509.13588">CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments</a></p>
+<p align="center">
+  🌐 <b>Project Page</b>: <a href="https://cobra.clawder.ai">cobra.clawder.ai</a> &nbsp;|&nbsp;
+  📄 <b>Paper</b>: <a href="https://arxiv.org/abs/2509.13588">arXiv 2509.13588</a>
+</p>
 
 <p align="center"><strong>If you find CoBRA useful, please star ⭐ this repo to help others discover it!</strong></p>
 
@@ -20,7 +23,7 @@
   <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/lang-简体中文-red.svg" alt="简体中文"></a>
 </p>
 
-
+<video src="https://github.com/user-attachments/assets/028ca8f4-6edd-426e-b436-2c3b796d81a0" controls width="700"></video>
 
 > **💡 What is Cognitive Bias?**
 > 

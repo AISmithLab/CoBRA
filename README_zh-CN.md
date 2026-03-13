@@ -11,7 +11,10 @@
 
 <h3 align="center"><em>以经过验证的社会科学知识为准绳，实现跨模型精确一致的智能体行为</em></h3>
 
-<p align="center">📄 <b>论文</b>: <a href="https://arxiv.org/abs/2509.13588">CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments</a></p>
+<p align="center">
+  🌐 <b>项目主页</b>: <a href="https://cobra.clawder.ai">cobra.clawder.ai</a> &nbsp;|&nbsp;
+  📄 <b>论文</b>: <a href="https://arxiv.org/abs/2509.13588">arXiv 2509.13588</a>
+</p>
 
 <p align="center"><strong>如果觉得 CoBRA 有用，请点个 Star ⭐ 帮助更多人发现它！</strong></p>
 
@@ -20,7 +23,7 @@
   <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/lang-简体中文-red.svg" alt="简体中文"></a>
 </p>
 
-
+<video src="https://github.com/user-attachments/assets/028ca8f4-6edd-426e-b436-2c3b796d81a0" controls width="700"></video>
 
 > **💡 什么是认知偏差？**
 >
