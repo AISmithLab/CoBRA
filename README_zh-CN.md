@@ -121,14 +121,11 @@ CoBRA/
 如果您在研究中使用 CoBRA，请引用我们的论文：
 
 ```bibtex
-@misc{liu2026cobraprogrammingcognitivebias,
-      title={CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments}, 
-      author={Xuan Liu and Haoyang Shang and Haojian Jin},
-      year={2026},
-      eprint={2509.13588},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2509.13588}, 
+@article{liu2025cobra,
+  title={CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments},
+  author={Liu, Xuan and Shang, Haoyang and Jin, Haojian},
+  journal={arXiv preprint arXiv:2509.13588},
+  year={2025}
 }
 ```
 
