@@ -111,9 +111,10 @@ class BiasScenarioGenerator:
         # Bias-specific prompts
         self.bias_prompts = {
             "authority": self._get_authority_generation_prompt(),
-            "framing": self._get_framing_generation_prompt(), 
+            "framing": self._get_framing_generation_prompt(),
             "bandwagon": self._get_bandwagon_generation_prompt(),
-            "confirmation": self._get_confirmation_generation_prompt()
+            "confirmation": self._get_confirmation_generation_prompt(),
+            "availability": self._get_availability_generation_prompt()
         }
         
 
@@ -234,6 +235,59 @@ D: Prioritize testing for cases where the rule might not apply, but still consid
 E: Only test for cases where the rule might not apply, ignoring confirming evidence.
 
 For each scenario, please vary the structure and syntax - use different sentence patterns, lengths, and approaches. Number the scenario.
+
+OUTPUT FORMAT:
+1. [Scenario text here with A-E options]
+
+2. [Scenario text here with A-E options]
+
+3. [Scenario text here with A-E options]
+
+Generate {num_scenarios} scenarios now:"""
+
+    def _get_availability_generation_prompt(self) -> str:
+        return """Generate {num_scenarios} different availability heuristic scenarios. Each scenario must be from a DIFFERENT domain with varied structure and syntax.
+
+Each scenario should involve a judgment of frequency, likelihood, or commonness that can be biased by ease of recall, memorability, salience, or familiarity. The key idea is that people may judge something as more common or more likely because examples come to mind more easily, even when that judgment is not supported by the actual underlying distribution.
+
+Each scenario should include:
+1. A setup where one class of examples is easier to recall, imagine, or recognize
+2. A decision point about which option seems more frequent, common, or likely
+3. Five concise multiple-choice options (A-E)
+
+Based on the UnitTest format, use structures like the following examples:
+
+**EXAMPLE 1:**
+Consider the letter K. If you sampled a random English word, which of the following do you think is more likely?
+
+A. It is much more likely to appear in the first position.
+B. It is somewhat more likely to appear in the first position.
+C. It is about equally likely to appear in the first or third position.
+D. It is somewhat more likely to appear in the third position.
+E. It is much more likely to appear in the third position.
+
+**EXAMPLE 2:**
+You are presented with the following list of entertainer names:
+
+Taylor Swift, Marcus Hale, Beyoncé, Dylan Ross, Lady Gaga, Owen Turner, Ariana Grande, Nathan Bell, Rihanna, Caleb Price
+
+Some of the names in the list belong to famous women entertainers.
+The others belong to less famous men entertainers.
+
+Which of the following best matches your judgment about which group appeared more often in the list?
+
+A. Group A was much more frequent.
+B. Group A was somewhat more frequent.
+C. The two groups appeared about equally often.
+D. Group B was somewhat more frequent.
+E. Group B was much more frequent.
+
+For each scenario, please vary the structure and syntax:
+- use different domains
+- use different surface forms of recall-based judgment
+- keep the underlying availability mechanism the same
+- do not simply repeat the same letter or name-list setup every time
+- keep the scenarios concise but complete
 
 OUTPUT FORMAT:
 1. [Scenario text here with A-E options]
@@ -457,7 +511,7 @@ Generate {num_scenarios} scenarios now:"""
                              model_name: str = "qwen") -> Dict[str, str]:
         """Generate complete dataset for specified bias types"""
         if bias_types is None:
-            bias_types = ["authority", "framing", "bandwagon", "confirmation"]
+            bias_types = ["authority", "framing", "bandwagon", "confirmation", "availability"]
         
         generated_files = {}
         
@@ -484,9 +538,9 @@ Generate {num_scenarios} scenarios now:"""
 def main():
     parser = argparse.ArgumentParser(description="Generate bias scenarios using OpenRouter API")
     parser.add_argument("--api-key", required=True, help="OpenRouter API key")
-    parser.add_argument("--bias-types", nargs="+", 
-                       choices=["authority", "framing", "bandwagon", "confirmation"],
-                       default=["authority", "framing", "bandwagon", "confirmation"],
+    parser.add_argument("--bias-types", nargs="+",
+                       choices=["authority", "framing", "bandwagon", "confirmation", "availability"],
+                       default=["authority", "framing", "bandwagon", "confirmation", "availability"],
                        help="Bias types to generate")
     parser.add_argument("--model", default="qwen",
                        help="Model to use for scenario generation")

@@ -13,9 +13,10 @@ authority_dir = os.path.join(examples_dir, 'authority')
 bandwagon_dir = os.path.join(examples_dir, 'bandwagon')
 framing_dir = os.path.join(examples_dir, 'framing')
 confirmation_dir = os.path.join(examples_dir, 'confirmation')
+availability_dir = os.path.join(examples_dir, 'availability')
 
 # Add to sys.path if not already there
-for path in [authority_dir, bandwagon_dir, framing_dir, confirmation_dir]:
+for path in [authority_dir, bandwagon_dir, framing_dir, confirmation_dir, availability_dir]:
     if path not in sys.path:
         sys.path.append(path)
 
@@ -61,6 +62,16 @@ except ImportError as e:
     print(f"Warning: Could not import confirmation utils: {e}")
     create_confirmation_dataset_from_generated = None
     load_confirmation_scenarios = None
+
+try:
+    from utils_availability import (
+        create_availability_dataset_from_generated,
+        load_availability_scenarios
+    )
+except ImportError as e:
+    print(f"Warning: Could not import availability utils: {e}")
+    create_availability_dataset_from_generated = None
+    load_availability_scenarios = None
 
 class BiasDataManager:
     """Manages data loading and dataset creation for all bias types"""
@@ -266,6 +277,24 @@ class BiasDataManager:
                 'model_path': model_info['path'],
                 'model_type': model_info['type'],
                 'model_description': model_info['description']
+            },
+            'availability': {
+                'generated_file': 'availability_generated*_with_responses.json',
+                'original_experiments': {
+                    'judgment_of_word_frequency': {
+                        'file': 'availability/availability_judgment_of_word_frequency.json',
+                        'type': 'judgment_of_word_frequency'
+                    },
+                    'fame_frequency_and_recall': {
+                        'file': 'availability/availability_fame_frequency_and_recall.json',
+                        'type': 'fame_frequency_and_recall'
+                    }
+                },
+                'create_dataset_func': create_availability_dataset_from_generated,
+                'load_scenarios_func': load_availability_scenarios,
+                'model_path': model_info['path'],
+                'model_type': model_info['type'],
+                'model_description': model_info['description']
             }
         }
         return configs.get(bias_type)
@@ -375,6 +404,8 @@ class BiasDataManager:
             return [s for s in scenarios if s.get('type') == exp_config['type']]
         elif bias_type == 'confirmation':
             return load_func(data_path, num_scenarios)
+        elif bias_type == 'availability':
+            return load_func(data_path, exp_config['type'], num_scenarios)
     
     def get_model_path(self, bias_type, model_name=None):
         """Get the model path for a specific bias type"""
@@ -417,7 +448,7 @@ class BiasDataManager:
     
     def get_all_bias_types(self):
         """Get all available bias types"""
-        return ['authority', 'bandwagon', 'framing', 'confirmation']
+        return ['authority', 'bandwagon', 'framing', 'confirmation', 'availability']
     
     def should_run_all_models(self):
         """Check if configuration specifies to run all models"""
@@ -532,6 +563,26 @@ class BiasDataManager:
                     "E": "Only test for cases where the rule might not apply, ignoring confirming evidence."
                 }
                 prompt_template = "You are presented with a rule: '{rule}' Below are four options, and your task is to choose which options to test to determine if the rule is true. The options are as follows: A: {card_1} B: {card_2} C: {card_3} D: {card_4}. Which of the following best reflects your approach?"
+
+        elif bias_type == 'availability':
+            if experiment_name == 'judgment_of_word_frequency':
+                mcq_options = {
+                    "A": "It is much more likely to appear in the first position.",
+                    "B": "It is somewhat more likely to appear in the first position.",
+                    "C": "It is about equally likely to appear in the first or third position.",
+                    "D": "It is somewhat more likely to appear in the third position.",
+                    "E": "It is much more likely to appear in the third position."
+                }
+                prompt_template = "Consider the letter/prefix \"{unit}\". If you sampled a random {source}, which of the following do you think is more likely?"
+            elif experiment_name == 'fame_frequency_and_recall':
+                mcq_options = {
+                    "A": "Group A was much more frequent.",
+                    "B": "Group A was somewhat more frequent.",
+                    "C": "The two groups appeared about equally often.",
+                    "D": "Group B was somewhat more frequent.",
+                    "E": "Group B was much more frequent."
+                }
+                prompt_template = "You are presented with the following list of {domain} names:\n{list_of_names}\n\nSome of the names in the list belong to Group A: {group_a}.\nThe others belong to Group B: {group_b}.\n\nWhich of the following best matches your judgment about which group appeared more often in the list?"
         
         return mcq_options, prompt_template
 
