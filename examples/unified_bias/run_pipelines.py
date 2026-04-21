@@ -4,7 +4,7 @@ from .pipelines import run_prompt_pipeline, run_repe_pipeline
 
 def main():
     p = argparse.ArgumentParser(description="Run unified control pipelines (prompt or repe)")
-    p.add_argument('--bias', required=True, help='authority|bandwagon|framing|confirmation')
+    p.add_argument('--bias', required=True, help='authority|bandwagon|framing|confirmation|availability')
     p.add_argument('--model', default=None, help='Model key in utils_bias config')
     p.add_argument('--test', action='store_true')
     p.add_argument('--temp', type=float, default=None)

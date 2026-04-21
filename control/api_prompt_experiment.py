@@ -197,6 +197,10 @@ class APIPromptControlExperiment(ControlExperiment):
             'confirmation': {
                 'max_description': 'always seek only information that confirms your existing beliefs',
                 'min_description': 'always seek information that challenges your existing beliefs'
+            },
+            'availability': {
+                'max_description': 'always judge frequency and probability based on how easily examples come to mind rather than actual statistics',
+                'min_description': 'never judge frequency based on ease of recall and always rely on objective data and actual statistics'
             }
         }
         

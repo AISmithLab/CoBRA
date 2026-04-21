@@ -81,6 +81,10 @@ class PromptControlExperiment(ControlExperiment):
             'confirmation': {
                 'max_description': 'always seek only information that confirms your existing beliefs',
                 'min_description': 'never seek only information that confirms your existing beliefs'
+            },
+            'availability': {
+                'max_description': 'always judge frequency and probability based on how easily examples come to mind',
+                'min_description': 'never judge frequency based on ease of recall and always rely on actual statistics'
             }
         }
         
